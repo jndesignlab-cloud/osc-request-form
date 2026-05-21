@@ -1,50 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OSC Service Request Form</title>
 
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    OSC Service Request Form
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
 
 </head>
+
 <body>
 
 <!-- ========================================
 PRIVACY MODAL
 ======================================== -->
 
-<div id="privacyModal" class="privacy-modal">
+<div
+  id="privacyModal"
+  class="privacy-modal"
+>
+
   <div class="privacy-card">
 
-    <div class="privacy-icon">🛡️</div>
+    <div class="privacy-icon">
+      🛡️
+    </div>
 
-    <p class="eyebrow">Welcome to the OSC Request System</p>
+    <p class="eyebrow">
+      Welcome to the OSC Request System
+    </p>
 
-    <h2>Before you continue</h2>
+    <h2>
+      Before you continue
+    </h2>
 
     <p>
-      This form collects your name, email address, office, request details,
-      uploaded references, and Google Drive links for the purpose of processing
-      your service request.
+      This form collects your name, email address,
+      office, request details, uploaded references,
+      and Google Drive links for the purpose of
+      processing your service request.
     </p>
 
     <p>
-      By continuing, you agree that the information you submit will be used by
-      the Office of Strategic Communications for request tracking, coordination,
+      By continuing, you agree that the information
+      you submit will be used by the Office of Strategic
+      Communications for request tracking, coordination,
       documentation, and communication purposes.
     </p>
 
     <label class="privacy-check">
-      <input type="checkbox" id="privacyAgree">
-      <span>I have read and agree to the data privacy notice.</span>
+
+      <input
+        type="checkbox"
+        id="privacyAgree"
+      >
+
+      <span>
+        I have read and agree to the
+        data privacy notice.
+      </span>
+
     </label>
 
-    <button id="continueBtn" disabled>
+    <button
+      id="continueBtn"
+      disabled
+    >
       Continue to Form
     </button>
 
   </div>
+
+</div>
+
+<!-- ========================================
+SUCCESS MODAL
+======================================== -->
+
+<div
+  id="successModal"
+  class="success-modal hidden"
+>
+
+  <div class="success-card">
+
+    <div class="success-icon">
+      ✅
+    </div>
+
+    <p class="eyebrow">
+      Request Submitted
+    </p>
+
+    <h2>
+      Request submitted successfully!
+    </h2>
+
+    <p class="success-rid">
+      Your Request ID is:
+      <strong id="successRID">
+        RID000
+      </strong>
+    </p>
+
+    <p>
+      To view the status of your request,
+      please visit:
+      <br><br>
+
+      <strong>
+        http://bit.ly/OSC-MCR-Tracker
+      </strong>
+    </p>
+
+    <div class="success-actions">
+
+      <button
+        id="newRequestBtn"
+        type="button"
+      >
+        Request New One
+      </button>
+
+      <a
+        href="http://bit.ly/OSC-MCR-Tracker"
+        target="_blank"
+      >
+        Go to Tracker
+      </a>
+
+    </div>
+
+  </div>
+
 </div>
 
 <!-- ========================================
@@ -57,7 +156,11 @@ MAIN
 
   <section class="header-card">
 
-    <img src="logo.png" alt="OSC Logo" class="logo">
+    <img
+      src="logo.png"
+      alt="OSC Logo"
+      class="logo"
+    >
 
     <p class="eyebrow">
       Online Request System
@@ -68,13 +171,16 @@ MAIN
     </h1>
 
     <p>
-      Submit your design, publication, documentation,
-      or promotional material request.
+      Submit your design, publication,
+      documentation, or promotional
+      material request.
     </p>
 
   </section>
 
-  <!-- FORM -->
+  <!-- ========================================
+  FORM
+  ======================================== -->
 
   <form id="requestForm">
 
@@ -89,77 +195,53 @@ MAIN
         <span>01</span>
 
         <div>
-          <h2>Requester Information</h2>
+
+          <h2>
+            Requester Information
+          </h2>
+
           <p>
-            Tell us who is submitting this request.
+            Tell us who is submitting
+            this request.
           </p>
+
         </div>
 
       </div>
 
       <div class="form-grid">
 
+        <!-- EMAIL -->
+
         <div class="field">
-          <label>Email Address *</label>
-          <input type="email" name="email" required>
+
+          <label>
+            Email Address *
+          </label>
+
+          <input
+            type="email"
+            name="email"
+            required
+          >
+
         </div>
 
+        <!-- OFFICE -->
+
         <div class="field">
 
-          <label>Office *</label>
+          <label>
+            Office *
+          </label>
 
-          <select name="office" required>
+          <select
+            name="office"
+            required
+          >
 
             <option value="">
               Select Office
-            </option>
-
-            <option>
-              Office of the President
-            </option>
-
-            <option>
-              Executive Vice President
-            </option>
-
-            <option>
-              Vice President for Operations
-            </option>
-
-            <option>
-              Office of the Vice President for Academics
-            </option>
-
-            <option>
-              Office of Human Resource and Development
-            </option>
-
-            <option>
-              Finance and Accounting Office
-            </option>
-
-            <option>
-              Office of Quality Assurance
-            </option>
-
-            <option>
-              Center for Student Success
-            </option>
-
-            <option>
-              Research Office
-            </option>
-
-            <option>
-              Office of Research Ethics
-            </option>
-
-            <option>
-              Knowledge Information and Network System
-            </option>
-
-            <option>
-              Registrar’s Office
             </option>
 
             <option>
@@ -167,39 +249,7 @@ MAIN
             </option>
 
             <option>
-              Internationalization Office
-            </option>
-
-            <option>
-              Facilities Office
-            </option>
-
-            <option>
-              Panpacific University Sustainability Office
-            </option>
-
-            <option>
-              Panpacific Language Center
-            </option>
-
-            <option>
-              School of Knowledge Innovation and Lifelong Learning
-            </option>
-
-            <option>
               School of Basic Education
-            </option>
-
-            <option>
-              Carl Balita Institute of Health Sciences
-            </option>
-
-            <option>
-              Romeo Padilla School of Education and Arts
-            </option>
-
-            <option>
-              Engineering-Computing Academy of Science and Technology
             </option>
 
             <option>
@@ -210,42 +260,40 @@ MAIN
               School of Criminology
             </option>
 
-            <option>
-              Panpacific University Merchant Marine Academy
-            </option>
-
-            <option>
-              Panpacific Graduate School
-            </option>
-
-            <option>
-              Expanded Tertiary Education Equivalency and Accreditation Program
-            </option>
-
-            <option>
-              Sports Academy
-            </option>
-
-            <option>
-              Partnerships Office
-            </option>
-
-            <option>
-              Safety and Security Office
-            </option>
-
           </select>
 
         </div>
 
-        <div class="field">
-          <label>Last Name *</label>
-          <input type="text" name="lastName" required>
-        </div>
+        <!-- LAST NAME -->
 
         <div class="field">
-          <label>First Name *</label>
-          <input type="text" name="firstName" required>
+
+          <label>
+            Last Name *
+          </label>
+
+          <input
+            type="text"
+            name="lastName"
+            required
+          >
+
+        </div>
+
+        <!-- FIRST NAME -->
+
+        <div class="field">
+
+          <label>
+            First Name *
+          </label>
+
+          <input
+            type="text"
+            name="firstName"
+            required
+          >
+
         </div>
 
       </div>
@@ -263,10 +311,16 @@ MAIN
         <span>02</span>
 
         <div>
-          <h2>Request Type</h2>
+
+          <h2>
+            Request Type
+          </h2>
+
           <p>
-            Choose the type that best fits your request.
+            Choose the type that best
+            fits your request.
           </p>
+
         </div>
 
       </div>
@@ -295,8 +349,9 @@ MAIN
             </h3>
 
             <p>
-              For requests related to an event or program
-              with an approved activity proposal.
+              For requests related to
+              an event or program with
+              an approved activity proposal.
             </p>
 
           </div>
@@ -325,8 +380,9 @@ MAIN
             </h3>
 
             <p>
-              For general marketing or design needs
-              without a formal activity proposal.
+              For general marketing or
+              design needs without a
+              formal activity proposal.
             </p>
 
           </div>
@@ -351,10 +407,16 @@ MAIN
         <span>03</span>
 
         <div>
-          <h2>Activity / Event Details</h2>
+
+          <h2>
+            Activity / Event Details
+          </h2>
+
           <p>
-            Provide details about the event or activity.
+            Provide details about the
+            event or activity.
           </p>
+
         </div>
 
       </div>
@@ -362,72 +424,106 @@ MAIN
       <div class="form-grid">
 
         <div class="field full">
-          <label>Activity Proposal Title *</label>
-          <input type="text" name="activityTitle">
-        </div>
 
-        <div class="field full">
-          <label>Description</label>
-          <textarea name="description" rows="4"></textarea>
-        </div>
+          <label>
+            Activity Proposal Title *
+          </label>
 
-        <div class="field">
-          <label>Start Date</label>
-          <input type="date" name="startDate">
-        </div>
+          <input
+            type="text"
+            name="activityTitle"
+          >
 
-        <div class="field">
-          <label>End Date</label>
-          <input type="date" name="endDate">
-        </div>
-
-        <div class="field">
-          <label>Start Time</label>
-          <input type="time" name="startTime">
-        </div>
-
-        <div class="field">
-          <label>End Time</label>
-          <input type="time" name="endTime">
-        </div>
-
-        <div class="field">
-          <label>Venue</label>
-          <input type="text" name="where">
-        </div>
-
-        <div class="field">
-          <label>Office in Charge</label>
-          <input type="text" name="who">
         </div>
 
         <div class="field full">
 
-          <label>Core Values</label>
+          <label>
+            Description
+          </label>
 
-          <div class="value-grid">
+          <textarea
+            name="description"
+            rows="4"
+          ></textarea>
 
-            <label class="value-item">
-              <input type="checkbox" name="coreValue" value="Pioneer">
-              <span>Pioneer</span>
-            </label>
+        </div>
 
-            <label class="value-item">
-              <input type="checkbox" name="coreValue" value="Compassion">
-              <span>Compassion</span>
-            </label>
+        <div class="field">
 
-            <label class="value-item">
-              <input type="checkbox" name="coreValue" value="Service">
-              <span>Service</span>
-            </label>
+          <label>
+            Start Date
+          </label>
 
-            <label class="value-item">
-              <input type="checkbox" name="coreValue" value="Truth">
-              <span>Truth</span>
-            </label>
+          <input
+            type="date"
+            name="startDate"
+          >
 
-          </div>
+        </div>
+
+        <div class="field">
+
+          <label>
+            End Date
+          </label>
+
+          <input
+            type="date"
+            name="endDate"
+          >
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            Start Time
+          </label>
+
+          <input
+            type="time"
+            name="startTime"
+          >
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            End Time
+          </label>
+
+          <input
+            type="time"
+            name="endTime"
+          >
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            Venue
+          </label>
+
+          <input
+            type="text"
+            name="where"
+          >
+
+        </div>
+
+        <div class="field">
+
+          <label>
+            Office in Charge
+          </label>
+
+          <input
+            type="text"
+            name="who"
+          >
 
         </div>
 
@@ -449,10 +545,16 @@ MAIN
         <span>04</span>
 
         <div>
-          <h2>Creative Direction</h2>
+
+          <h2>
+            Creative Direction
+          </h2>
+
           <p>
-            Help us understand the output you need.
+            Help us understand the
+            output you need.
           </p>
+
         </div>
 
       </div>
@@ -463,7 +565,9 @@ MAIN
 
         <div class="field full">
 
-          <label>Requested Service *</label>
+          <label>
+            Requested Service *
+          </label>
 
           <div class="service-grid">
 
@@ -524,38 +628,78 @@ MAIN
 
           </div>
 
-          <small>
-            Select all services that apply.
-          </small>
-
         </div>
 
         <!-- DATE -->
 
         <div class="field">
-          <label>Date Needed *</label>
-          <input type="date" name="dateNeeded" required>
+
+          <label>
+            Date Needed *
+          </label>
+
+          <input
+            type="date"
+            name="dateNeeded"
+            required
+          >
+
           <small>
-            Minimum 3 days from current date.
+            Minimum 3 days from
+            current date.
           </small>
+
         </div>
 
         <!-- SIZE -->
 
         <div class="field">
-          <label>Size / Dimensions</label>
+
+          <label>
+            Size / Dimensions
+          </label>
+
           <input
             type="text"
             name="sizeDimensions"
             placeholder="1080x1080, A4, 4x8 ft"
           >
+
+        </div>
+
+        <!-- DRIVE LINK -->
+
+        <div class="field full">
+
+          <label>
+            Assets Google Drive Link
+          </label>
+
+          <input
+            type="text"
+            name="assetsDriveLink"
+            placeholder="Paste Google Drive folder/file link here"
+          >
+
+          <small>
+            Any accessible link is accepted.
+          </small>
+
         </div>
 
         <!-- REMARKS -->
 
         <div class="field full">
-          <label>Remarks</label>
-          <textarea name="remarks" rows="3"></textarea>
+
+          <label>
+            Remarks
+          </label>
+
+          <textarea
+            name="remarks"
+            rows="3"
+          ></textarea>
+
         </div>
 
       </div>
@@ -568,11 +712,17 @@ MAIN
 
     <section class="submit-card">
 
-      <button type="submit" id="submitBtn">
+      <button
+        type="submit"
+        id="submitBtn"
+      >
         Submit Request
       </button>
 
-      <p id="formMessage" class="form-message"></p>
+      <p
+        id="formMessage"
+        class="form-message"
+      ></p>
 
     </section>
 
