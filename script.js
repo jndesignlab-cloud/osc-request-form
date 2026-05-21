@@ -4,7 +4,8 @@ const API_URL = "https://script.google.com/macros/s/AKfycbx1zQFBhYR2FWf9oqDM7-Vs
 ELEMENTS
 ======================================== */
 
-const form = document.getElementById("requestForm");
+const form =
+  document.getElementById("requestForm");
 
 const submitBtn =
   document.getElementById("submitBtn");
@@ -50,7 +51,43 @@ privacyAgree.addEventListener("change", () => {
 
 continueBtn.addEventListener("click", () => {
 
-  privacyModal.classList.add("hidden");
+  privacyModal.style.opacity = "0";
+
+  privacyModal.style.pointerEvents =
+    "none";
+
+  setTimeout(() => {
+
+    privacyModal.style.display = "none";
+
+  }, 250);
+
+});
+
+/* ========================================
+SUCCESS MODAL
+======================================== */
+
+const successModal =
+  document.getElementById("successModal");
+
+const successRID =
+  document.getElementById("successRID");
+
+const newRequestBtn =
+  document.getElementById("newRequestBtn");
+
+newRequestBtn.addEventListener("click", () => {
+
+  successModal.classList.add("hidden");
+
+  window.scrollTo({
+
+    top: 0,
+
+    behavior: "smooth"
+
+  });
 
 });
 
@@ -74,9 +111,11 @@ GET CHECKBOX VALUES
 function getCheckedValues(name) {
 
   return Array.from(
+
     document.querySelectorAll(
       `input[name="${name}"]:checked`
     )
+
   )
 
   .map(input => input.value)
@@ -95,7 +134,8 @@ function setMinimumDate() {
 
   min.setDate(min.getDate() + 3);
 
-  const yyyy = min.getFullYear();
+  const yyyy =
+    min.getFullYear();
 
   const mm =
     String(min.getMonth() + 1)
@@ -132,55 +172,13 @@ requestTypeInputs.forEach(input => {
 
   input.addEventListener("change", () => {
 
-    handleRequestTypeChange(input.value);
+    handleRequestTypeChange(
+      input.value
+    );
 
   });
 
 });
-
-/* ========================================
-FILE TO BASE64
-======================================== */
-
-function fileToBase64(file) {
-
-  return new Promise((resolve, reject) => {
-
-    const reader = new FileReader();
-
-    reader.onload = () => {
-
-      resolve({
-
-        name: file.name,
-
-        type: file.type,
-
-        data:
-          reader.result.split(",")[1]
-
-      });
-
-    };
-
-    reader.onerror = reject;
-
-    reader.readAsDataURL(file);
-
-  });
-
-}
-
-async function filesToBase64(fileList) {
-
-  const files =
-    Array.from(fileList || []);
-
-  return Promise.all(
-    files.map(fileToBase64)
-  );
-
-}
 
 /* ========================================
 FORM SUBMIT
@@ -258,6 +256,9 @@ form.addEventListener("submit", async (e) => {
       sizeDimensions:
         formData.get("sizeDimensions"),
 
+      assetsDriveLink:
+        formData.get("assetsDriveLink"),
+
       remarks:
         formData.get("remarks")
 
@@ -277,19 +278,22 @@ form.addEventListener("submit", async (e) => {
 
     if (result.success) {
 
-      showMessage(
+      successRID.textContent =
+        result.requestID || "RID000";
 
-        `Request submitted successfully! Your Request ID is ${result.requestID}.`,
-
-        "success"
-
+      successModal.classList.remove(
+        "hidden"
       );
 
       form.reset();
 
-      activityCard.classList.add("hidden");
+      activityCard.classList.add(
+        "hidden"
+      );
 
-      creativeCard.classList.add("hidden");
+      creativeCard.classList.add(
+        "hidden"
+      );
 
     }
 
