@@ -4,14 +4,11 @@
   --brand-green: #406f27;
   --brand-green-hover: #365e21;
   --brand-blue: #263f77;
-
   --bg: #f5f7fa;
   --surface: #ffffff;
   --border: #e4e8ed;
-
   --text: #2A2A2A;
   --muted: #7a818c;
-
   --radius: 22px;
   --shadow: 0 14px 40px rgba(0,0,0,.08);
   --transition: 0.2s ease;
@@ -21,10 +18,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -50,7 +43,6 @@ body {
   padding: 32px;
   box-shadow: var(--shadow);
   margin-bottom: 24px;
-  backdrop-filter: blur(10px);
 }
 
 .header-card {
@@ -173,8 +165,6 @@ small {
   line-height: 1.5;
 }
 
-/* Request Type Cards */
-
 .type-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -241,8 +231,6 @@ small {
   border-color: var(--brand-green);
 }
 
-/* SDG */
-
 .sdg-grid {
   display: grid;
   grid-template-columns: repeat(17, 26px);
@@ -295,24 +283,27 @@ small {
 .sdg-16 span { background: #00689D; }
 .sdg-17 span { background: #19486A; }
 
-/* Core Values */
-
 .value-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
-.value-item span {
-  display: block;
+.value-item span,
+.service-item span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
   text-align: center;
   padding: 12px 14px;
   border-radius: 999px;
   border: 1.5px solid var(--border);
   background: #f9fafb;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 800;
+  line-height: 1.3;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -324,26 +315,15 @@ small {
   box-shadow: 0 8px 18px rgba(38,63,119,.18);
 }
 
-/* Services */
-
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
-.service-item span {
-  display: block;
-  text-align: center;
-  padding: 12px 14px;
-  border-radius: 999px;
-  border: 1.5px solid var(--border);
-  background: #f9fafb;
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: var(--transition);
+.service-item span:hover {
+  transform: translateY(-1px);
+  border-color: rgba(64,111,39,.35);
 }
 
 .service-item input:checked + span {
