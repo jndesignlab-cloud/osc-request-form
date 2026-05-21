@@ -1,4 +1,4 @@
-const API_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL";
+const API_URL = "https://script.google.com/macros/s/AKfycbx1zQFBhYR2FWf9oqDM7-Vs0ElDmiu1WhZe0zI_LqXm5x0qkkqvrnyHVFCs11JB9ukdOA/exec";
 
 const form = document.getElementById("requestForm");
 const submitBtn = document.getElementById("submitBtn");
