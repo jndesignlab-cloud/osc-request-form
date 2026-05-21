@@ -319,6 +319,7 @@ small {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  max-width: 100%;
 }
 
 .service-item span:hover {
