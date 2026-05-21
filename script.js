@@ -9,13 +9,17 @@ const serviceCard = document.getElementById("serviceCard");
 const creativeCard = document.getElementById("creativeCard");
 
 const requestTypeInputs = document.querySelectorAll('input[name="requestType"]');
-const dateNeededInputs = document.querySelectorAll(
-  'input[name="dateNeeded"], input[name="dateNeededCreative"]'
-);
+const dateNeededInput = document.querySelector('input[name="dateNeeded"]');
 
 function showMessage(message, type) {
   formMessage.textContent = message;
   formMessage.className = "form-message " + type;
+}
+
+function getCheckedValues(name) {
+  return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+    .map(input => input.value)
+    .join(", ");
 }
 
 function setMinimumDate() {
@@ -26,11 +30,7 @@ function setMinimumDate() {
   const mm = String(min.getMonth() + 1).padStart(2, "0");
   const dd = String(min.getDate()).padStart(2, "0");
 
-  const minDate = `${yyyy}-${mm}-${dd}`;
-
-  dateNeededInputs.forEach(input => {
-    input.min = minDate;
-  });
+  dateNeededInput.min = `${yyyy}-${mm}-${dd}`;
 }
 
 function handleRequestTypeChange(value) {
@@ -90,10 +90,6 @@ form.addEventListener("submit", async (e) => {
       document.getElementById("designPegFiles").files
     );
 
-    const dateNeeded =
-      formData.get("dateNeededCreative") ||
-      formData.get("dateNeeded");
-
     const description =
       requestType === "Activity-Based"
         ? formData.get("description")
@@ -104,13 +100,18 @@ form.addEventListener("submit", async (e) => {
         ? formData.get("who")
         : formData.get("whoService");
 
+    const purpose =
+      requestType === "Activity-Based"
+        ? formData.get("activityTitle")
+        : formData.get("purpose");
+
     const payload = {
       email: formData.get("email"),
       lastName: formData.get("lastName"),
       firstName: formData.get("firstName"),
       office: formData.get("office"),
       requestType: requestType,
-      purpose: formData.get("purpose") || formData.get("activityTitle"),
+      purpose: purpose,
       activityTitle: formData.get("activityTitle"),
       description: description,
       startTime: formData.get("startTime"),
@@ -119,12 +120,11 @@ form.addEventListener("submit", async (e) => {
       endDate: formData.get("endDate"),
       where: formData.get("where"),
       who: who,
-      sdg: formData.get("sdg"),
-      coreValue: formData.get("coreValue"),
+      sdg: getCheckedValues("sdg"),
+      coreValue: getCheckedValues("coreValue"),
       proposal: formData.get("proposal"),
       request: formData.get("request"),
-      requestedService: formData.get("requestedService"),
-      dateNeeded: dateNeeded,
+      dateNeeded: formData.get("dateNeeded"),
       sizeDimensions: formData.get("sizeDimensions"),
       remarks: formData.get("remarks"),
       caption: formData.get("caption"),
