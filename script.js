@@ -14,12 +14,10 @@ function fileToBase64(file) {
     const reader = new FileReader();
 
     reader.onload = () => {
-      const base64 = reader.result.split(",")[1];
-
       resolve({
         name: file.name,
         type: file.type,
-        data: base64
+        data: reader.result.split(",")[1]
       });
     };
 
@@ -43,8 +41,9 @@ form.addEventListener("submit", async (e) => {
   try {
     const formData = new FormData(form);
 
-    const designPegFiles = await filesToBase64(document.getElementById("designPegFiles").files);
-    const assetsFiles = await filesToBase64(document.getElementById("assetsFiles").files);
+    const designPegFiles = await filesToBase64(
+      document.getElementById("designPegFiles").files
+    );
 
     const payload = {
       email: formData.get("email"),
@@ -69,8 +68,8 @@ form.addEventListener("submit", async (e) => {
       sizeDimensions: formData.get("sizeDimensions"),
       remarks: formData.get("remarks"),
       caption: formData.get("caption"),
-      designPegFiles,
-      assetsFiles
+      assetsDriveLink: formData.get("assetsDriveLink"),
+      designPegFiles: designPegFiles
     };
 
     const response = await fetch(API_URL, {
@@ -81,7 +80,7 @@ form.addEventListener("submit", async (e) => {
     const result = await response.json();
 
     if (result.success) {
-      showMessage("Request submitted successfully!", "success");
+      showMessage(`Request submitted successfully! Your Request ID is ${result.requestID}.`, "success");
       form.reset();
     } else {
       showMessage(result.message || "Submission failed.", "error");
