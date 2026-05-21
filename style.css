@@ -13,10 +13,7 @@
   --muted: #7a818c;
 
   --radius: 22px;
-
-  --shadow:
-    0 14px 40px rgba(0,0,0,.08);
-
+  --shadow: 0 14px 40px rgba(0,0,0,.08);
   --transition: 0.2s ease;
 }
 
@@ -33,15 +30,8 @@ html {
 body {
   font-family: 'Inter', Arial, sans-serif;
   background:
-    radial-gradient(circle at top left,
-      rgba(64,111,39,.08),
-      transparent 30%),
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      var(--bg) 100%
-    );
-
+    radial-gradient(circle at top left, rgba(64,111,39,.08), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
   color: var(--text);
   padding: 42px 16px;
 }
@@ -51,31 +41,17 @@ body {
   margin: 0 auto;
 }
 
-/* ========================================
-   CARDS
-======================================== */
-
 .header-card,
 .form-card,
 .submit-card {
   background: rgba(255,255,255,.96);
-
   border: 1px solid var(--border);
-
   border-radius: var(--radius);
-
   padding: 32px;
-
   box-shadow: var(--shadow);
-
   margin-bottom: 24px;
-
   backdrop-filter: blur(10px);
 }
-
-/* ========================================
-   HEADER
-======================================== */
 
 .header-card {
   text-align: center;
@@ -110,10 +86,6 @@ body {
   line-height: 1.6;
 }
 
-/* ========================================
-   SECTION HEADERS
-======================================== */
-
 .section-heading {
   display: flex;
   gap: 14px;
@@ -124,15 +96,11 @@ body {
 .section-heading span {
   min-width: 38px;
   height: 38px;
-
   border-radius: 999px;
-
   background: var(--brand-blue);
   color: #ffffff;
-
   display: grid;
   place-items: center;
-
   font-size: 0.82rem;
   font-weight: 800;
 }
@@ -150,10 +118,6 @@ body {
   line-height: 1.5;
 }
 
-/* ========================================
-   FORM GRID
-======================================== */
-
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -169,10 +133,6 @@ body {
   grid-column: span 2;
 }
 
-/* ========================================
-   LABELS
-======================================== */
-
 label {
   font-size: 0.82rem;
   font-weight: 700;
@@ -180,28 +140,17 @@ label {
   margin-bottom: 8px;
 }
 
-/* ========================================
-   INPUTS
-======================================== */
-
 input,
 select,
 textarea {
   width: 100%;
-
   padding: 15px 16px;
-
   border: 1.5px solid var(--border);
-
   border-radius: 14px;
-
   font-family: inherit;
   font-size: 0.95rem;
-
   outline: none;
-
   background: #f9fafb;
-
   transition: var(--transition);
 }
 
@@ -213,11 +162,8 @@ input:focus,
 select:focus,
 textarea:focus {
   border-color: var(--brand-green);
-
   background: #ffffff;
-
-  box-shadow:
-    0 0 0 4px rgba(64,111,39,.14);
+  box-shadow: 0 0 0 4px rgba(64,111,39,.14);
 }
 
 small {
@@ -227,9 +173,7 @@ small {
   line-height: 1.5;
 }
 
-/* ========================================
-   REQUEST TYPE CARDS
-======================================== */
+/* Request Type Cards */
 
 .type-grid {
   display: grid;
@@ -248,15 +192,10 @@ small {
 
 .type-card div {
   height: 100%;
-
   padding: 24px;
-
   border: 1.5px solid var(--border);
-
   border-radius: 20px;
-
   background: #f9fafb;
-
   transition: var(--transition);
 }
 
@@ -267,20 +206,13 @@ small {
 .type-icon {
   width: 44px;
   height: 44px;
-
   border-radius: 14px;
-
   background: rgba(38, 63, 119, 0.08);
-
   border: 1px solid rgba(38, 63, 119, 0.14);
-
   color: var(--brand-blue);
-
   display: grid;
   place-items: center;
-
   font-size: 1.25rem;
-
   margin-bottom: 14px;
 }
 
@@ -299,11 +231,8 @@ small {
 
 .type-card input:checked + div {
   border-color: var(--brand-green);
-
   background: #eef7e9;
-
-  box-shadow:
-    0 0 0 4px rgba(64,111,39,.12);
+  box-shadow: 0 0 0 4px rgba(64,111,39,.12);
 }
 
 .type-card input:checked + div .type-icon {
@@ -312,56 +241,40 @@ small {
   border-color: var(--brand-green);
 }
 
-/* ========================================
-   SDG
-======================================== */
+/* SDG */
 
 .sdg-grid {
   display: grid;
-  grid-template-columns: repeat(17, 1fr);
-
+  grid-template-columns: repeat(17, 26px);
   gap: 6px;
-
-  max-width: 520px;
 }
 
 .sdg-item input,
-.value-item input {
+.value-item input,
+.service-item input {
   display: none;
 }
 
 .sdg-item span {
   width: 26px;
   height: 26px;
-
   border-radius: 7px;
-
-  background: #e5e7eb;
-
   color: #ffffff;
-
   display: grid;
   place-items: center;
-
   font-size: 0.62rem;
   font-weight: 900;
-
   cursor: pointer;
-
   filter: grayscale(1);
   opacity: 0.42;
-
   transition: var(--transition);
 }
 
 .sdg-item input:checked + span {
   filter: grayscale(0);
   opacity: 1;
-
   transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 18px rgba(0,0,0,.12);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
 }
 
 .sdg-1 span { background: #E5243B; }
@@ -382,9 +295,7 @@ small {
 .sdg-16 span { background: #00689D; }
 .sdg-17 span { background: #19486A; }
 
-/* ========================================
-   CORE VALUES
-======================================== */
+/* Core Values */
 
 .value-grid {
   display: grid;
@@ -394,66 +305,69 @@ small {
 
 .value-item span {
   display: block;
-
   text-align: center;
-
   padding: 12px 14px;
-
   border-radius: 999px;
-
   border: 1.5px solid var(--border);
-
   background: #f9fafb;
-
   color: var(--muted);
-
   font-size: 0.85rem;
   font-weight: 800;
-
   cursor: pointer;
-
   transition: var(--transition);
 }
 
 .value-item input:checked + span {
   background: var(--brand-blue);
-
   border-color: var(--brand-blue);
-
   color: #ffffff;
-
-  box-shadow:
-    0 8px 18px rgba(38,63,119,.18);
+  box-shadow: 0 8px 18px rgba(38,63,119,.18);
 }
 
-/* ========================================
-   SUBMIT BUTTON
-======================================== */
+/* Services */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.service-item span {
+  display: block;
+  text-align: center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: #f9fafb;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.service-item input:checked + span {
+  background: var(--brand-green);
+  border-color: var(--brand-green);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(64,111,39,.18);
+}
 
 #submitBtn {
   width: 100%;
-
   padding: 16px 20px;
-
   border: none;
-
   border-radius: 999px;
-
   background: var(--brand-green);
-
   color: #ffffff;
-
   font-size: 1rem;
   font-weight: 800;
-
   cursor: pointer;
-
   transition: var(--transition);
 }
 
 #submitBtn:hover {
   background: var(--brand-green-hover);
-
   transform: translateY(-1px);
 }
 
@@ -462,15 +376,9 @@ small {
   cursor: not-allowed;
 }
 
-/* ========================================
-   FORM MESSAGE
-======================================== */
-
 .form-message {
   margin-top: 16px;
-
   text-align: center;
-
   font-size: 0.92rem;
   font-weight: 700;
 }
@@ -483,20 +391,11 @@ small {
   color: #c53030;
 }
 
-/* ========================================
-   UTILITIES
-======================================== */
-
 .hidden {
   display: none !important;
 }
 
-/* ========================================
-   MOBILE
-======================================== */
-
 @media (max-width: 760px) {
-
   body {
     padding: 26px 12px;
   }
@@ -520,7 +419,8 @@ small {
     grid-template-columns: repeat(9, 26px);
   }
 
-  .value-grid {
+  .value-grid,
+  .service-grid {
     grid-template-columns: 1fr 1fr;
   }
 
