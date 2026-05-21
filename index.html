@@ -10,141 +10,166 @@
 
   <main class="container">
 
-    <section class="header">
-      <img src="logo.svg" alt="Logo" class="logo">
+    <section class="header-card">
+      <img src="logo.svg" alt="OSC Logo" class="logo">
+      <p class="eyebrow">Online Request System</p>
       <h1>OSC Service Request Form</h1>
-      <p>Submit your request for design, publication, documentation, or promotional support.</p>
+      <p>Submit your design, publication, documentation, or promotional material request.</p>
     </section>
 
     <form id="requestForm" class="form-card">
 
-      <div class="form-grid">
-        <div class="field">
-          <label>Email Address</label>
-          <input type="email" name="email" required>
-        </div>
+      <div class="form-section">
+        <h2>Requester Information</h2>
 
-        <div class="field">
-          <label>Office</label>
-          <input type="text" name="office" required>
-        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label>Email Address *</label>
+            <input type="email" name="email" required>
+          </div>
 
-        <div class="field">
-          <label>Last Name</label>
-          <input type="text" name="lastName" required>
-        </div>
+          <div class="field">
+            <label>Office *</label>
+            <input type="text" name="office" required>
+          </div>
 
-        <div class="field">
-          <label>First Name</label>
-          <input type="text" name="firstName" required>
-        </div>
+          <div class="field">
+            <label>Last Name *</label>
+            <input type="text" name="lastName" required>
+          </div>
 
-        <div class="field">
-          <label>Request Type</label>
-          <select name="requestType" required>
-            <option value="">Select request type</option>
-            <option>Publication Material</option>
-            <option>Social Media Post</option>
-            <option>Documentation</option>
-            <option>Video / Reel</option>
-            <option>Tarpaulin / Print Design</option>
-            <option>Other</option>
-          </select>
+          <div class="field">
+            <label>First Name *</label>
+            <input type="text" name="firstName" required>
+          </div>
         </div>
+      </div>
 
-        <div class="field">
-          <label>Date Needed</label>
-          <input type="date" name="dateNeeded" required>
+      <div class="form-section">
+        <h2>Request Details</h2>
+
+        <div class="form-grid">
+          <div class="field">
+            <label>Request Type *</label>
+            <select name="requestType" required>
+              <option value="">Select request type</option>
+              <option>Publication Material</option>
+              <option>Social Media Post</option>
+              <option>Documentation</option>
+              <option>Video / Reel</option>
+              <option>Tarpaulin / Print Design</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>Date Needed *</label>
+            <input type="date" name="dateNeeded" required>
+          </div>
+
+          <div class="field full">
+            <label>Purpose / Title *</label>
+            <textarea name="purpose" rows="3" required></textarea>
+          </div>
+
+          <div class="field full">
+            <label>Request *</label>
+            <textarea name="request" rows="4" required placeholder="Describe what you need us to create or assist with."></textarea>
+          </div>
         </div>
+      </div>
 
-        <div class="field full">
-          <label>Purpose</label>
-          <textarea name="purpose" rows="3"></textarea>
+      <div class="form-section">
+        <h2>Activity / Event Details</h2>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label>Activity Proposal Title</label>
+            <input type="text" name="activityTitle">
+          </div>
+
+          <div class="field full">
+            <label>Description</label>
+            <textarea name="description" rows="4"></textarea>
+          </div>
+
+          <div class="field">
+            <label>Start Date</label>
+            <input type="date" name="startDate">
+          </div>
+
+          <div class="field">
+            <label>End Date</label>
+            <input type="date" name="endDate">
+          </div>
+
+          <div class="field">
+            <label>Start Time</label>
+            <input type="time" name="startTime">
+          </div>
+
+          <div class="field">
+            <label>End Time</label>
+            <input type="time" name="endTime">
+          </div>
+
+          <div class="field">
+            <label>Where</label>
+            <input type="text" name="where">
+          </div>
+
+          <div class="field">
+            <label>Who</label>
+            <input type="text" name="who">
+          </div>
+
+          <div class="field">
+            <label>SDG</label>
+            <input type="text" name="sdg">
+          </div>
+
+          <div class="field">
+            <label>Core Value</label>
+            <input type="text" name="coreValue">
+          </div>
         </div>
+      </div>
 
-        <div class="field full">
-          <label>Activity Proposal Title</label>
-          <input type="text" name="activityTitle">
-        </div>
+      <div class="form-section">
+        <h2>Creative Direction</h2>
 
-        <div class="field full">
-          <label>Description</label>
-          <textarea name="description" rows="4"></textarea>
-        </div>
+        <div class="form-grid">
+          <div class="field full">
+            <label>Proposal</label>
+            <textarea name="proposal" rows="3"></textarea>
+          </div>
 
-        <div class="field">
-          <label>Start Date</label>
-          <input type="date" name="startDate">
-        </div>
+          <div class="field">
+            <label>Size / Dimensions</label>
+            <input type="text" name="sizeDimensions" placeholder="Example: 1080x1080, A4, 4x8 ft">
+          </div>
 
-        <div class="field">
-          <label>End Date</label>
-          <input type="date" name="endDate">
-        </div>
+          <div class="field">
+            <label>Remarks</label>
+            <input type="text" name="remarks">
+          </div>
 
-        <div class="field">
-          <label>Start Time</label>
-          <input type="time" name="startTime">
-        </div>
+          <div class="field full">
+            <label>Caption</label>
+            <textarea name="caption" rows="3"></textarea>
+          </div>
 
-        <div class="field">
-          <label>End Time</label>
-          <input type="time" name="endTime">
-        </div>
+          <div class="field full upload-box">
+            <label>Design Peg / Reference Upload</label>
+            <input type="file" id="designPegFiles" multiple>
+            <small>Upload references, pegs, screenshots, or sample layouts.</small>
+          </div>
 
-        <div class="field">
-          <label>Where</label>
-          <input type="text" name="where">
-        </div>
-
-        <div class="field">
-          <label>Who</label>
-          <input type="text" name="who">
-        </div>
-
-        <div class="field">
-          <label>SDG</label>
-          <input type="text" name="sdg">
-        </div>
-
-        <div class="field">
-          <label>Core Value</label>
-          <input type="text" name="coreValue">
-        </div>
-
-        <div class="field full">
-          <label>Proposal</label>
-          <textarea name="proposal" rows="3"></textarea>
-        </div>
-
-        <div class="field full">
-          <label>Request</label>
-          <textarea name="request" rows="3"></textarea>
-        </div>
-
-        <div class="field">
-          <label>Size / Dimensions</label>
-          <input type="text" name="sizeDimensions">
-        </div>
-
-        <div class="field">
-          <label>Remarks</label>
-          <input type="text" name="remarks">
-        </div>
-
-        <div class="field full">
-          <label>Caption</label>
-          <textarea name="caption" rows="3"></textarea>
-        </div>
-
-        <div class="field full">
-          <label>Design Peg / Reference Upload</label>
-          <input type="file" id="designPegFiles" multiple>
-        </div>
-
-        <div class="field full">
-          <label>Assets Drive Link Upload</label>
-          <input type="file" id="assetsFiles" multiple>
+          <div class="field full">
+            <label>Assets Google Drive Link</label>
+            <input type="url" name="assetsDriveLink" placeholder="Paste Google Drive folder/file link here">
+            <small>Share your assets folder/file link here. Make sure access is enabled.</small>
+          </div>
         </div>
       </div>
 
