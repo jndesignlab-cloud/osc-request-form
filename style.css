@@ -186,6 +186,18 @@ small {
   transition: 0.2s ease;
 }
 
+.type-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  margin-bottom: 14px;
+}
+
 .type-card h3 {
   font-size: 1.05rem;
   font-weight: 800;
@@ -203,6 +215,91 @@ small {
   border-color: var(--brand-green);
   background: #eef7e9;
   box-shadow: 0 0 0 4px rgba(64,111,39,.12);
+}
+
+.type-card input:checked + div .type-icon {
+  background: var(--brand-green);
+  color: #ffffff;
+  border-color: var(--brand-green);
+}
+
+.sdg-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 8px;
+}
+
+.sdg-item input,
+.value-item input {
+  display: none;
+}
+
+.sdg-item span {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  background: #e5e7eb;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  cursor: pointer;
+  filter: grayscale(1);
+  opacity: 0.45;
+  transition: 0.2s ease;
+}
+
+.sdg-item input:checked + span {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+}
+
+.sdg-1 span { background: #E5243B; }
+.sdg-2 span { background: #DDA63A; }
+.sdg-3 span { background: #4C9F38; }
+.sdg-4 span { background: #C5192D; }
+.sdg-5 span { background: #FF3A21; }
+.sdg-6 span { background: #26BDE2; }
+.sdg-7 span { background: #FCC30B; }
+.sdg-8 span { background: #A21942; }
+.sdg-9 span { background: #FD6925; }
+.sdg-10 span { background: #DD1367; }
+.sdg-11 span { background: #FD9D24; }
+.sdg-12 span { background: #BF8B2E; }
+.sdg-13 span { background: #3F7E44; }
+.sdg-14 span { background: #0A97D9; }
+.sdg-15 span { background: #56C02B; }
+.sdg-16 span { background: #00689D; }
+.sdg-17 span { background: #19486A; }
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.value-item span {
+  display: block;
+  text-align: center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: #f9fafb;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.value-item input:checked + span {
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(38,63,119,.18);
 }
 
 #submitBtn {
@@ -265,6 +362,14 @@ small {
 
   .field.full {
     grid-column: span 1;
+  }
+
+  .sdg-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .value-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .header-card h1 {
