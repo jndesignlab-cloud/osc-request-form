@@ -1,730 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <title>
-    OSC Service Request Form
-  </title>
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSC Service Request Form</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<!-- ========================================
-PRIVACY MODAL
-======================================== -->
-
-<div
-  id="privacyModal"
-  class="privacy-modal"
->
-
+<div id="privacyModal" class="privacy-modal">
   <div class="privacy-card">
-
-
-
-    <p class="eyebrow">
-      Welcome to the OSC Request System
-    </p>
-
-    <h2>
-      Before you continue
-    </h2>
-
-    <p>
-      This form collects your name, email address,
-      office, request details, uploaded references,
-      and Google Drive links for the purpose of
-      processing your service request.
-    </p>
-
-    <p>
-      By continuing, you agree that the information
-      you submit will be used by the Office of Strategic
-      Communications for request tracking, coordination,
-      documentation, and communication purposes.
-    </p>
-
+    <div class="privacy-icon">🛡️</div>
+    <p class="eyebrow">Welcome to the OSC Request System</p>
+    <h2>Before you continue</h2>
+    <p>This form collects your name, email address, office, request details, uploaded references, and Google Drive links for the purpose of processing your service request.</p>
+    <p>By continuing, you agree that the information you submit will be used by the Office of Strategic Communications for request tracking, coordination, documentation, and communication purposes.</p>
     <label class="privacy-check">
-
-      <input
-        type="checkbox"
-        id="privacyAgree"
-      >
-
-      <span>
-        I have read and agree to the
-        data privacy notice.
-      </span>
-
+      <input type="checkbox" id="privacyAgree">
+      <span>I have read and agree to the data privacy notice.</span>
     </label>
-
-    <button
-      id="continueBtn"
-      disabled
-    >
-      Continue to Form
-    </button>
-
+    <button id="continueBtn" disabled>Continue to Form</button>
   </div>
-
 </div>
 
-<!-- ========================================
-SUCCESS MODAL
-======================================== -->
-
-<div
-  id="successModal"
-  class="success-modal hidden"
->
-
+<div id="successModal" class="success-modal hidden">
   <div class="success-card">
-
-    <div class="success-icon">
-      ✅
-    </div>
-
-    <p class="eyebrow">
-      Request Submitted
-    </p>
-
-    <h2>
-      Request submitted successfully!
-    </h2>
-
-    <p class="success-rid">
-      Your Request ID is:
-      <strong id="successRID">
-        RID000
-      </strong>
-    </p>
-
-    <p>
-      To view the status of your request,
-      please visit:
-      <br><br>
-
-      <strong>
-        http://bit.ly/OSC-MCR-Tracker
-      </strong>
-    </p>
-
+    <div class="success-icon">✅</div>
+    <p class="eyebrow">Request Submitted</p>
+    <h2>Request submitted successfully!</h2>
+    <p class="success-rid">Your Request ID is: <strong id="successRID">RID000</strong></p>
+    <p>To view the status of your request, please visit:<br><br><strong>http://bit.ly/OSC-MCR-Tracker</strong></p>
     <div class="success-actions">
-
-      <button
-        id="newRequestBtn"
-        type="button"
-      >
-        Request New One
-      </button>
-
-      <a
-        href="http://bit.ly/OSC-MCR-Tracker"
-        target="_blank"
-      >
-        Go to Tracker
-      </a>
-
+      <button id="newRequestBtn" type="button">Request New One</button>
+      <a href="http://bit.ly/OSC-MCR-Tracker" target="_blank">Go to Tracker</a>
     </div>
-
   </div>
-
 </div>
-
-<!-- ========================================
-MAIN
-======================================== -->
 
 <main class="container">
-
-  <!-- HEADER -->
-
   <section class="header-card">
-
-    <img
-      src="logo.png"
-      alt="OSC Logo"
-      class="logo"
-    >
-
-    <p class="eyebrow">
-      Online Request System
-    </p>
-
-    <h1>
-      OSC Service Request Form
-    </h1>
-
-    <p>
-      Submit your design, publication,
-      documentation, or promotional
-      material request.
-    </p>
-
+    <img src="logo.png" alt="OSC Logo" class="logo">
+    <p class="eyebrow">Online Request System</p>
+    <h1>OSC Service Request Form</h1>
+    <p>Submit your design, publication, documentation, or promotional material request.</p>
   </section>
 
-  <!-- ========================================
-  FORM
-  ======================================== -->
-
   <form id="requestForm">
-
-    <!-- ========================================
-    REQUESTER INFO
-    ======================================== -->
-
     <section class="form-card">
-
       <div class="section-heading">
-
         <span>01</span>
-
         <div>
-
-          <h2>
-            Requester Information
-          </h2>
-
-          <p>
-            Tell us who is submitting
-            this request.
-          </p>
-
+          <h2>Requester Information</h2>
+          <p>Tell us who is submitting this request.</p>
         </div>
-
       </div>
 
       <div class="form-grid">
-
-        <!-- EMAIL -->
-
         <div class="field">
-
-          <label>
-            Email Address *
-          </label>
-
-          <input
-            type="email"
-            name="email"
-            required
-          >
-
+          <label>Email Address *</label>
+          <input type="email" name="email" required>
         </div>
-
-        <!-- OFFICE -->
-
         <div class="field">
-
-          <label>
-            Office *
-          </label>
-
-          <select
-            name="office"
-            required
-          >
-
-            <option value="">
-              Select Office
-            </option>
-
-            <option>
-              Office of Strategic Communications
-            </option>
-
-            <option>
-              School of Basic Education
-            </option>
-
-            <option>
-              Panpacific Business School
-            </option>
-
-            <option>
-              School of Criminology
-            </option>
-
+          <label>Office *</label>
+          <select name="office" required>
+            <option value="">Select Office</option>
+            <option>Office of the President</option>
+            <option>Executive Vice President</option>
+            <option>Vice President for Operations</option>
+            <option>Office of the Vice President for Academics</option>
+            <option>Office of Human Resource and Development</option>
+            <option>Finance and Accounting Office</option>
+            <option>Office of Quality Assurance</option>
+            <option>Center for Student Success</option>
+            <option>Research Office</option>
+            <option>Office of Research Ethics</option>
+            <option>Knowledge Information and Network System</option>
+            <option>Registrar’s Office</option>
+            <option>Office of Strategic Communications</option>
+            <option>Internationalization Office</option>
+            <option>Facilities Office</option>
+            <option>Panpacific University Sustainability Office</option>
+            <option>Panpacific Language Center</option>
+            <option>School of Knowledge Innovation and Lifelong Learning</option>
+            <option>School of Basic Education</option>
+            <option>Carl Balita Institute of Health Sciences</option>
+            <option>Romeo Padilla School of Education and Arts</option>
+            <option>Engineering-Computing Academy of Science and Technology</option>
+            <option>Panpacific Business School</option>
+            <option>School of Criminology</option>
+            <option>Panpacific University Merchant Marine Academy</option>
+            <option>Panpacific Graduate School</option>
+            <option>Expanded Tertiary Education Equivalency and Accreditation Program</option>
+            <option>Sports Academy</option>
+            <option>Partnerships Office</option>
+            <option>Safety and Security Office</option>
           </select>
-
         </div>
-
-        <!-- LAST NAME -->
-
         <div class="field">
-
-          <label>
-            Last Name *
-          </label>
-
-          <input
-            type="text"
-            name="lastName"
-            required
-          >
-
+          <label>Last Name *</label>
+          <input type="text" name="lastName" required>
         </div>
-
-        <!-- FIRST NAME -->
-
         <div class="field">
-
-          <label>
-            First Name *
-          </label>
-
-          <input
-            type="text"
-            name="firstName"
-            required
-          >
-
+          <label>First Name *</label>
+          <input type="text" name="firstName" required>
         </div>
-
       </div>
-
     </section>
-
-    <!-- ========================================
-    REQUEST TYPE
-    ======================================== -->
 
     <section class="form-card">
-
       <div class="section-heading">
-
         <span>02</span>
-
         <div>
-
-          <h2>
-            Request Type
-          </h2>
-
-          <p>
-            Choose the type that best
-            fits your request.
-          </p>
-
+          <h2>Request Type</h2>
+          <p>Choose the type that best fits your request.</p>
         </div>
-
       </div>
-
       <div class="type-grid">
-
-        <!-- ACTIVITY -->
-
         <label class="type-card">
-
-          <input
-            type="radio"
-            name="requestType"
-            value="Activity-Based"
-            required
-          >
-
+          <input type="radio" name="requestType" value="Activity-Based" required>
           <div>
-
-    
-
-            <h3>
-              Activity-Based
-            </h3>
-
-            <p>
-              For requests related to
-              an event or program with
-              an approved activity proposal.
-            </p>
-
+            <div class="type-icon">📅</div>
+            <h3>Activity-Based</h3>
+            <p>For requests related to an event or program with an approved activity proposal.</p>
           </div>
-
         </label>
-
-        <!-- SERVICE -->
-
         <label class="type-card">
-
-          <input
-            type="radio"
-            name="requestType"
-            value="Service-Based"
-            required
-          >
-
+          <input type="radio" name="requestType" value="Service-Based" required>
           <div>
-
-
-
-            <h3>
-              Service-Based
-            </h3>
-
-            <p>
-              For general marketing or
-              design needs without a
-              formal activity proposal.
-            </p>
-
+            <div class="type-icon">🛠️</div>
+            <h3>Service-Based</h3>
+            <p>For general marketing or design needs without a formal activity proposal.</p>
           </div>
-
         </label>
-
       </div>
-
     </section>
 
-    <!-- ========================================
-    ACTIVITY CARD
-    ======================================== -->
-
-    <section
-      id="activityCard"
-      class="form-card hidden"
-    >
-
+    <section id="activityCard" class="form-card hidden">
       <div class="section-heading">
-
         <span>03</span>
-
         <div>
-
-          <h2>
-            Activity / Event Details
-          </h2>
-
-          <p>
-            Provide details about the
-            event or activity.
-          </p>
-
+          <h2>Activity / Event Details</h2>
+          <p>Provide details about the event or activity.</p>
         </div>
-
       </div>
-
       <div class="form-grid">
+        <div class="field full">
+          <label>Activity Proposal Title *</label>
+          <input type="text" name="activityTitle">
+        </div>
+        <div class="field full">
+          <label>Description</label>
+          <textarea name="description" rows="4"></textarea>
+        </div>
+        <div class="field">
+          <label>Start Date</label>
+          <input type="date" name="startDate">
+        </div>
+        <div class="field">
+          <label>End Date</label>
+          <input type="date" name="endDate">
+        </div>
+        <div class="field">
+          <label>Start Time</label>
+          <input type="time" name="startTime">
+        </div>
+        <div class="field">
+          <label>End Time</label>
+          <input type="time" name="endTime">
+        </div>
+        <div class="field">
+          <label>Venue</label>
+          <input type="text" name="where">
+        </div>
+        <div class="field">
+          <label>Office in Charge</label>
+          <input type="text" name="who">
+        </div>
 
         <div class="field full">
-
-          <label>
-            Activity Proposal Title *
-          </label>
-
-          <input
-            type="text"
-            name="activityTitle"
-          >
-
-        </div>
-
-        <div class="field full">
-
-          <label>
-            Description
-          </label>
-
-          <textarea
-            name="description"
-            rows="4"
-          ></textarea>
-
-        </div>
-
-        <div class="field">
-
-          <label>
-            Start Date
-          </label>
-
-          <input
-            type="date"
-            name="startDate"
-          >
-
-        </div>
-
-        <div class="field">
-
-          <label>
-            End Date
-          </label>
-
-          <input
-            type="date"
-            name="endDate"
-          >
-
-        </div>
-
-        <div class="field">
-
-          <label>
-            Start Time
-          </label>
-
-          <input
-            type="time"
-            name="startTime"
-          >
-
-        </div>
-
-        <div class="field">
-
-          <label>
-            End Time
-          </label>
-
-          <input
-            type="time"
-            name="endTime"
-          >
-
-        </div>
-
-        <div class="field">
-
-          <label>
-            Venue
-          </label>
-
-          <input
-            type="text"
-            name="where"
-          >
-
-        </div>
-
-        <div class="field">
-
-          <label>
-            Office in Charge
-          </label>
-
-          <input
-            type="text"
-            name="who"
-          >
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ========================================
-    CREATIVE DIRECTION
-    ======================================== -->
-
-    <section
-      id="creativeCard"
-      class="form-card hidden"
-    >
-
-      <div class="section-heading">
-
-        <span>04</span>
-
-        <div>
-
-          <h2>
-            Creative Direction
-          </h2>
-
-          <p>
-            Help us understand the
-            output you need.
-          </p>
-
-        </div>
-
-      </div>
-
-      <div class="form-grid">
-
-        <!-- SERVICES -->
-
-        <div class="field full">
-
-          <label>
-            Requested Service *
-          </label>
-
-          <div class="service-grid">
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Poster">
-              <span>Poster</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Video">
-              <span>Video</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Certificate Template">
-              <span>Certificate Template</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Program Template">
-              <span>Program Template</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Event Documentation">
-              <span>Event Documentation</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Calling Card">
-              <span>Calling Card</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Brochure">
-              <span>Brochure</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Tarpaulin">
-              <span>Tarpaulin</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Frame Photos">
-              <span>Frame Photos</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Posting">
-              <span>Posting</span>
-            </label>
-
-            <label class="service-item">
-              <input type="checkbox" name="request" value="Other">
-              <span>Other</span>
-            </label>
-
+          <label>Sustainable Development Goals</label>
+          <div class="sdg-grid">
+            <label class="sdg-item sdg-1"><input type="checkbox" name="sdg" value="SDG 1"><span>1</span></label>
+            <label class="sdg-item sdg-2"><input type="checkbox" name="sdg" value="SDG 2"><span>2</span></label>
+            <label class="sdg-item sdg-3"><input type="checkbox" name="sdg" value="SDG 3"><span>3</span></label>
+            <label class="sdg-item sdg-4"><input type="checkbox" name="sdg" value="SDG 4"><span>4</span></label>
+            <label class="sdg-item sdg-5"><input type="checkbox" name="sdg" value="SDG 5"><span>5</span></label>
+            <label class="sdg-item sdg-6"><input type="checkbox" name="sdg" value="SDG 6"><span>6</span></label>
+            <label class="sdg-item sdg-7"><input type="checkbox" name="sdg" value="SDG 7"><span>7</span></label>
+            <label class="sdg-item sdg-8"><input type="checkbox" name="sdg" value="SDG 8"><span>8</span></label>
+            <label class="sdg-item sdg-9"><input type="checkbox" name="sdg" value="SDG 9"><span>9</span></label>
+            <label class="sdg-item sdg-10"><input type="checkbox" name="sdg" value="SDG 10"><span>10</span></label>
+            <label class="sdg-item sdg-11"><input type="checkbox" name="sdg" value="SDG 11"><span>11</span></label>
+            <label class="sdg-item sdg-12"><input type="checkbox" name="sdg" value="SDG 12"><span>12</span></label>
+            <label class="sdg-item sdg-13"><input type="checkbox" name="sdg" value="SDG 13"><span>13</span></label>
+            <label class="sdg-item sdg-14"><input type="checkbox" name="sdg" value="SDG 14"><span>14</span></label>
+            <label class="sdg-item sdg-15"><input type="checkbox" name="sdg" value="SDG 15"><span>15</span></label>
+            <label class="sdg-item sdg-16"><input type="checkbox" name="sdg" value="SDG 16"><span>16</span></label>
+            <label class="sdg-item sdg-17"><input type="checkbox" name="sdg" value="SDG 17"><span>17</span></label>
           </div>
-
+          <small>Select all SDGs that apply.</small>
         </div>
-
-        <!-- DATE -->
-
-        <div class="field">
-
-          <label>
-            Date Needed *
-          </label>
-
-          <input
-            type="date"
-            name="dateNeeded"
-            required
-          >
-
-          <small>
-            Minimum 3 days from
-            current date.
-          </small>
-
-        </div>
-
-        <!-- SIZE -->
-
-        <div class="field">
-
-          <label>
-            Size / Dimensions
-          </label>
-
-          <input
-            type="text"
-            name="sizeDimensions"
-            placeholder="1080x1080, A4, 4x8 ft"
-          >
-
-        </div>
-
-        <!-- DRIVE LINK -->
 
         <div class="field full">
-
-          <label>
-            Assets Google Drive Link
-          </label>
-
-          <input
-            type="text"
-            name="assetsDriveLink"
-            placeholder="Paste Google Drive folder/file link here"
-          >
-
-          <small>
-            Any accessible link is accepted.
-          </small>
-
+          <label>Core Values</label>
+          <div class="value-grid">
+            <label class="value-item"><input type="checkbox" name="coreValue" value="Pioneer"><span>Pioneer</span></label>
+            <label class="value-item"><input type="checkbox" name="coreValue" value="Compassion"><span>Compassion</span></label>
+            <label class="value-item"><input type="checkbox" name="coreValue" value="Service"><span>Service</span></label>
+            <label class="value-item"><input type="checkbox" name="coreValue" value="Truth"><span>Truth</span></label>
+          </div>
         </div>
-
-        <!-- REMARKS -->
 
         <div class="field full">
-
-          <label>
-            Remarks
-          </label>
-
-          <textarea
-            name="remarks"
-            rows="3"
-          ></textarea>
-
+          <label>Activity Proposal Link</label>
+          <input type="text" name="proposal" placeholder="Paste activity proposal link here">
         </div>
-
       </div>
-
     </section>
 
-    <!-- ========================================
-    SUBMIT
-    ======================================== -->
+    <section id="creativeCard" class="form-card hidden">
+      <div class="section-heading">
+        <span>04</span>
+        <div>
+          <h2>Creative Direction</h2>
+          <p>Help us understand the output you need.</p>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="field full">
+          <label>Requested Service *</label>
+          <div class="service-grid">
+            <label class="service-item"><input type="checkbox" name="request" value="Poster"><span>Poster</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Video"><span>Video</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Certificate Template"><span>Certificate Template</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Program Template"><span>Program Template</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Event Documentation"><span>Event Documentation</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Calling Card"><span>Calling Card</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Brochure"><span>Brochure</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Tarpaulin"><span>Tarpaulin</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Frame Photos"><span>Frame Photos</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Posting"><span>Posting</span></label>
+            <label class="service-item"><input type="checkbox" name="request" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Date Needed *</label>
+          <input type="date" name="dateNeeded" required>
+          <small>Minimum 3 days from current date.</small>
+        </div>
+        <div class="field">
+          <label>Size / Dimensions</label>
+          <input type="text" name="sizeDimensions" placeholder="1080x1080, A4, 4x8 ft">
+        </div>
+        <div class="field full">
+          <label>Assets Google Drive Link</label>
+          <input type="text" name="assetsDriveLink" placeholder="Paste Google Drive folder/file link here">
+          <small>Any accessible link is accepted.</small>
+        </div>
+        <div class="field full">
+          <label>Remarks</label>
+          <textarea name="remarks" rows="3"></textarea>
+        </div>
+      </div>
+    </section>
 
     <section class="submit-card">
-
-      <button
-        type="submit"
-        id="submitBtn"
-      >
-        Submit Request
-      </button>
-
-      <p
-        id="formMessage"
-        class="form-message"
-      ></p>
-
+      <button type="submit" id="submitBtn">Submit Request</button>
+      <p id="formMessage" class="form-message"></p>
     </section>
-
   </form>
-
 </main>
 
 <script src="script.js"></script>
-
 </body>
 </html>
