@@ -6,10 +6,10 @@
  ****************************************************/
 
 const API_URL =
-  'https://script.google.com/macros/s/AKfycbzsgRXSWTLEwgRNE-hlIBBxGlQOaWCcLDu7MjX9EjbD34anGmt-OqH7nx7Ms9AQKWnOPA/exec';
+  'https://script.google.com/macros/s/AKfycbxEunaJNRhC8Awsue_m90W6w4TLcKv7JReEAfFphr1Ar2sBdHOL120WmI7VWbWOzU7e/exec';
 
 const FORM_STATUS_API_URL =
-  'https://script.google.com/macros/s/AKfycbx1zQFBhYR2FWf9oqDM7-Vs0ElDmiu1WhZe0zI_LqXm5x0qkkqvrnyHVFCs11JB9ukdOA/exec';
+  'https://script.google.com/macros/s/AKfycbx95aSPGw_UHjT6zgXaJ515rG4Su4l4gjAuZl0qkf3keOBop7AmRdTtcphkbjMpVa2iiA/exec';
 
 const TRACKER_URL = 'https://bit.ly/OSC-MCR-Tracker';
 
