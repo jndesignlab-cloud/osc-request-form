@@ -567,3 +567,46 @@ small {
     font-size: 1.7rem;
   }
 }
+
+/* Mobile hotfix for entry/privacy modal */
+@media (max-width: 640px) {
+  #privacyModal {
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  #privacyModal > * {
+    max-height: calc(100dvh - 20px);
+    overflow-y: auto;
+  }
+
+  #privacyModal .modal-content,
+  #privacyModal .privacy-content,
+  #privacyModal .privacy-card {
+    max-height: calc(100dvh - 20px);
+    overflow-y: auto;
+    padding-bottom: 90px;
+  }
+
+  #continueBtn {
+    position: sticky;
+    bottom: 10px;
+    width: 100%;
+    z-index: 10;
+    margin-top: 18px;
+  }
+
+  .osc-requester-gate {
+    margin: 14px 0;
+    padding: 14px;
+  }
+
+  .osc-requester-role-options {
+    grid-template-columns: 1fr;
+  }
+
+  .osc-requester-role-option {
+    min-height: 48px;
+  }
+}
